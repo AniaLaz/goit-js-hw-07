@@ -3,7 +3,12 @@ import { galleryItems } from './gallery-items.js';
 const galleryEl = document.querySelector('.gallery');
 const galleryCards = createGalaryCards(galleryItems);
 
+
+
 galleryEl.insertAdjacentHTML('beforeend', galleryCards)
+galleryEl.addEventListener('click', createClickImg)
+
+
 
 function createGalaryCards(galleryItems) {
     return galleryItems.map(({description,original,preview}) =>{
@@ -22,5 +27,11 @@ function createGalaryCards(galleryItems) {
     }).join('');   
 }
 
-console.log(galleryItems);
-console.log(galleryEl);
+// console.log(galleryItems);
+// console.log(galleryEl);
+
+function createClickImg(e) {
+    e.preventDefault();
+     const originalEl = e.target.dataset.source;
+    console.log(originalEl);
+}
