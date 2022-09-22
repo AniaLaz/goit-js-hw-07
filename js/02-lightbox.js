@@ -16,6 +16,7 @@ function createGalaryCards(galleryItems) {
   src="${preview}" 
   data-source="${original}"
   alt="${description}" />
+  
 </a>
 </div>
 `;
@@ -24,5 +25,6 @@ function createGalaryCards(galleryItems) {
 
 function createClickImg(e) {
     e.preventDefault();
-    new SimpleLightbox(".gallery a", {captionsData: "alt", captionDelay: "250"});
-}
+ }
+
+ var lightbox = new SimpleLightbox('.gallery a', {captionsData: "alt", captionDelay: "250"});

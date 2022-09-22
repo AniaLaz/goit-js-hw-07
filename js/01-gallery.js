@@ -26,10 +26,13 @@ function createGalaryCards(galleryItems) {
 
 function createClickImg(e) {
     e.preventDefault();
+    if (e.target === e.currentTarget){
+      return
+    }
+  
      const originalEl = e.target.dataset.source;
      const altEl = e.target.alt;
-    console.log(originalEl);
-
+  
     const instance = basicLightbox.create(`
     <div class="modal">
     <img
